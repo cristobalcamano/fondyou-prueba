@@ -41,6 +41,14 @@ public class PreguntaAdapter implements PreguntaRepositoryPort {
         if(examenEntity == null){
             throw new FondYouException("No existe la pregunta referenciada");
         }
+
+        //Validacion
+        Integer validacion = examenRepository.
+                findExamenEstudianteByEstudianteAndExamen(e.getId(),e.getOpcionCorrecta().getId());
+        if(validacion == null || validacion <1){
+            throw new FondYouException("Opcion no pertenece a la pregunta");
+        }
+
         PreguntaEntity preguntaEntitysave = PreguntaEntity.dtoToEntity(e,examenId);
         preguntaRepository.save(preguntaEntitysave);
         return true;

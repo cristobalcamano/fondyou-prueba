@@ -74,7 +74,7 @@ public class EstudianteController {
     }
 
     @PostMapping("/{estudiante}/asignar-examen/{examen}")
-    public ResponseEntity<?> realizarExamen(@PathVariable Long estudiante, @PathVariable Long examen) {
+    public ResponseEntity<?> asignarExamen(@PathVariable Long estudiante, @PathVariable Long examen) {
         try {
             Boolean respuesta = servicioTareaEstudiante.AsignarExamen(estudiante, examen);
             return new ResponseEntity<>(respuesta, HttpStatus.OK);

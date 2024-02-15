@@ -5,7 +5,6 @@ import dominio.estudiante.model.Estudiante;
 import dominio.estudiante.model.Respuestas;
 import dominio.estudiante.ports.out.EstudianteRepositoryPort;
 import dominio.exepcion.FondYouException;
-import infraestructura.calificacion.model.entity.EstudianteExamenEntity;
 import infraestructura.estudiante.model.entity.EstudianteEntity;
 import infraestructura.estudiante.model.entity.EstudianteExamenCEntity;
 import infraestructura.estudiante.model.entity.RespuestaEntity;
@@ -16,7 +15,6 @@ import infraestructura.examen.model.entity.ExamenEntity;
 import infraestructura.examen.repository.ExamenRepository;
 
 import java.text.ParseException;
-import java.util.Date;
 import java.util.List;
 
 public class EstudianteAdapter implements EstudianteRepositoryPort {

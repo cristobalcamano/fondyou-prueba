@@ -1,7 +1,6 @@
 package calificacion.adapter;
 
 import dominio.resultados.model.Calificacion;
-import infraestructura.calificacion.adapter.CalificacionAdapter;
 import infraestructura.calificacion.model.entity.CalificacionEntity;
 import infraestructura.calificacion.model.entity.EstudianteExamenEntity;
 import infraestructura.calificacion.repository.CalificacionRepository;

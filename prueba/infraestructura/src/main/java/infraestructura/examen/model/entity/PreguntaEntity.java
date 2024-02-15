@@ -1,9 +1,7 @@
 package infraestructura.examen.model.entity;
 
-import dominio.examen.model.Examen;
 import dominio.examen.model.Pregunta;
 import infraestructura.model.entity.EstadoEntity;
-import infraestructura.model.entity.ZonaHorariaEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -46,7 +44,7 @@ public class PreguntaEntity {
     private EstadoEntity idEstado;
 
     @OneToMany(mappedBy = "pregunta", cascade = CascadeType.ALL)
-    private List<OpcionEntity> Opciones;
+    private List<OpcionEntity> opciones;
 
     public static Pregunta entityToDto(PreguntaEntity pregunta){
 
@@ -63,7 +61,8 @@ public class PreguntaEntity {
                 pregunta.getDescripcion(),
                 //ExamenEntity.entityToDto(pregunta.getExamen())
                 examenEntity,
-                OpcionEntity.dtoToEntity(pregunta.getOpcionCorrecta(),pregunta.getId()), EstadoEntity.dtoToEntity(pregunta.getEstado()),
+                OpcionEntity.dtoToEntity(pregunta.getOpcionCorrecta(),pregunta.getId()),
+                EstadoEntity.dtoToEntity(pregunta.getEstado()),
                 null);
     }
 

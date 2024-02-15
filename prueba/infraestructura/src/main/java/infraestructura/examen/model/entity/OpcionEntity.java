@@ -52,8 +52,12 @@ public class OpcionEntity {
         if(opcion == null){
             return null;
         }
-        return new OpcionEntity(opcion.getId(), opcion.getOpcion(),
-                EstadoEntity.dtoToEntity(opcion.getEstado()), pregunta);
+        OpcionEntity opcionEntity = new OpcionEntity();
+        opcionEntity.setIdOpcion(opcion.getId());
+        opcionEntity.setOpcion(opcion.getOpcion());
+        opcionEntity.setEstado(EstadoEntity.dtoToEntity(opcion.getEstado()));
+        opcionEntity.setPregunta(pregunta);
+        return opcionEntity;
     }
 
     public static List<Opcion> entityListToDtoList(List<OpcionEntity> entityList){
